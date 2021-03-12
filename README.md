@@ -180,8 +180,146 @@ The password for the next level is stored in the file data.txt, where all lowerc
 Rotated by 13 positions means a -> n, b -> o ... y -> l, z -> m  
 We *cat* the contents of the file and pipe it to *tr* (translate) command to change all letters by 13 positions.
 
-```shell
-bandit11@bandit:~$ cat data.txt | tr 'a-zA-Z' 'n-za-mN-ZA-M'
+---
+
+## Bandit 12
+**Description**  
+
 ```
+bandit12@bandit:/tmp/micheal$ file data.txt
+data.txt: ASCII text
+bandit12@bandit:/tmp/micheal$ cat data.txt
+00000000: 1f8b 0808 0650 b45e 0203 6461 7461 322e  .....P.^..data2.
+00000010: 6269 6e00 013d 02c2 fd42 5a68 3931 4159  bin..=...BZh91AY
+00000020: 2653 598e 4f1c c800 001e 7fff fbf9 7fda  &SY.O...........
+00000030: 9e7f 4f76 9fcf fe7d 3fff f67d abde 5e9f  ..Ov...}?..}..^.
+00000040: f3fe 9fbf f6f1 feee bfdf a3ff b001 3b1b  ..............;.
+00000050: 5481 a1a0 1ea0 1a34 d0d0 001a 68d3 4683  T......4....h.F.
+00000060: 4680 0680 0034 1918 4c4d 190c 4000 0001  F....4..LM..@...
+
+bandit12@bandit:/tmp/micheal$ xxd -r data.txt data.out
+bandit12@bandit:/tmp/micheal$ file *
+data.out: gzip compressed data, was "data2.bin", last modified: Thu May  7 18:14:30 2020, max compression, from Unix
+data.txt: ASCII text
+bandit12@bandit:/tmp/micheal$ gunzip data.out
+gzip: data.out: unknown suffix -- ignored
+bandit12@bandit:/tmp/micheal$ gunzip -S ".out" data.out
+bandit12@bandit:/tmp/micheal$ ls
+data  data.txt
+bandit12@bandit:/tmp/micheal$ file *
+data:     bzip2 compressed data, block size = 900k
+data.txt: ASCII text
+bandit12@bandit:/tmp/micheal$ bzip2 -d data
+bzip2: Can't guess original name for data -- using data.out
+bandit12@bandit:/tmp/micheal$ file *
+data.out: gzip compressed data, was "data4.bin", last modified: Thu May  7 18:14:30 2020, max compression, from Unix
+data.txt: ASCII text
+bandit12@bandit:/tmp/micheal$ gunzip -S ".out" data.out
+bandit12@bandit:/tmp/micheal$ ls
+data  data.txt
+
+bandit12@bandit:/tmp/micheal$ ls
+data  data.txt
+bandit12@bandit:/tmp/micheal$ file data
+data: POSIX tar archive (GNU)
+bandit12@bandit:/tmp/micheal$ tar xvf data
+data5.bin
+bandit12@bandit:/tmp/micheal$ file data5.bin
+data5.bin: POSIX tar archive (GNU)
+bandit12@bandit:/tmp/micheal$ tar xvf data5.bin
+data6.bin
+bandit12@bandit:/tmp/micheal$ file data6.bin
+data6.bin: bzip2 compressed data, block size = 900k
+bandit12@bandit:/tmp/micheal$ bzip2 -d data6.bin
+bzip2: Can't guess original name for data6.bin -- using data6.bin.out
+bandit12@bandit:/tmp/micheal$ file data6.bin.out
+data6.bin.out: POSIX tar archive (GNU)
+bandit12@bandit:/tmp/micheal$ tar xvf data.bin.out
+tar: data.bin.out: Cannot open: No such file or directory
+tar: Error is not recoverable: exiting now
+bandit12@bandit:/tmp/micheal$ tar xvf data6.bin.out
+data8.bin
+bandit12@bandit:/tmp/micheal$ file data8.bin
+data8.bin: gzip compressed data, was "data9.bin", last modified: Thu May  7 18:14:30 2020, max compression, from Unix
+bandit12@bandit:/tmp/micheal$ gunzip -S ".bin" data8.bin
+bandit12@bandit:/tmp/micheal$ ls
+data  data5.bin  data6.bin.out  data8  data.txt
+bandit12@bandit:/tmp/micheal$ file data
+data: POSIX tar archive (GNU)
+bandit12@bandit:/tmp/micheal$ file data8
+data8: ASCII text
+bandit12@bandit:/tmp/micheal$ cat data8
+
+xxd -r data.txt data.out
+gunzip -S ".out" data.out
+bzip2 -d data
+gunzip -S ".out" data.out
+tar xvf data
+tar xvf data5.bin
+bzip2 -d data6.bin
+tar xvf data6.bin.out
+gunzip -S ".bin" data8.bin
+cat data8
+
+```
+---
+
+## Bandit 13
+**Description**  
+
+ssh -i sshprivate bandit14@localhost
 
 ---
+
+## Bandit 14
+
+echo "4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e" | nc localhost 30000
+
+---
+
+## Bandit 15
+
+bandit15@bandit:~$ openssl s_client -connect localhost:30001
+"enter password for current level"
+
+---
+
+## Bandit 16
+nmap -sV -oA /tmp/mike/ -p 31000-32000 localhost
+grep open nmap.nmap
+
+bandit16@bandit:~$ openssl s_client -connect localhost:31790
+"create ssh key"
+chmod 700 key
+ssh -i key bandit17@localhost
+
+---
+
+## Bandit 17
+diff password.new password.old
+
+---
+
+## Bandit 18
+ssh bandit18@bandit.labs.overthewire.org -p 2220 "cat readme"
+
+---
+
+## Bandit 19
+./bandit20-do cat /etc/bandit_pass/bandit20
+
+---
+
+## Bandit 20
+
+bandit20@bandit:/tmp/blah$ grep open nmap.nmap
+22/tcp    open  ssh                 OpenSSH 7.4p1 (protocol 2.0)
+113/tcp   open  ident
+30000/tcp open  ndmps?
+30001/tcp open  ssl/pago-services1?
+30002/tcp open  pago-services2?
+31046/tcp open  echo
+31518/tcp open  ssl/echo
+31691/tcp open  echo
+31790/tcp open  ssl/unknown
+31960/tcp open  echo
