@@ -657,4 +657,8 @@ NOTE: Try connecting to your own network daemon to see if it works as you think
 **Walkthrough**  
 setup python server to send password with connected  
 receive new password from suconnect  
+<<<<<<< HEAD
 print to screen
+=======
+print to screen'''
+>>>>>>> e14af1b425efb4c8273078bd0acfc6ecd4e98692
