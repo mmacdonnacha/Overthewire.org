@@ -3,7 +3,7 @@
 [OverTheWire - Bandit](https://overthewire.org/wargames/bandit/)
 
 Table of Contents  
-[Bandit Level 00 -> Level 01](#bandit-level-0-->-level-1)  
+[Bandit Level 00 -> Level 01](##bandit-level-0-->-level-1)  
 [Bandit Level 01 -> Level 02](#bandit-level-1-->-level-2)  
 [Bandit Level 02 -> Level 03](#bandit-level-2-->-level-3)  
 [Bandit Level 03 -> Level 04](#bandit-level-3-->-level-4)  
