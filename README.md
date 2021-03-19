@@ -1,25 +1,36 @@
 # Overthewire.org - Bandit
 
-[OverTheWire - Bandit](https://overthewire.org/wargames/bandit/)
+## [OverTheWire - Bandit](https://overthewire.org/wargames/bandit/)
 
-Table of Contents  
-[Bandit Level 00 -> Level 01](#bandit-level-0-->-level-1)  
-[Bandit Level 01 -> Level 02](#bandit-level-1-->-level-2)  
-[Bandit Level 02 -> Level 03](#bandit-level-2-->-level-3)  
-[Bandit Level 03 -> Level 04](#bandit-level-3-->-level-4)  
-[Bandit Level 04 -> Level 05](#bandit-level-4-->-level-5)  
-[Bandit Level 05 -> Level 06](#bandit-level-5-->-level-6)  
-[Bandit Level 06 -> Level 07](#bandit-level-6-->-level-7)  
-[Bandit Level 07 -> Level 08](#bandit-level-7-->-level-8)  
-[Bandit Level 08 -> Level 09](#bandit-level-8-->-level-9)  
-[Bandit Level 09 -> Level 10](#bandit-level-9-->-level-10)  
-[Bandit Level 10 -> Level 11](#bandit-level-10-->-level-11)  
+### Table of Contents  
+
+[Bandit Level 00 -> Level 01](#bandit-level-0)  |  [Bandit Level 17 -> Level 18](#bandit-level-17)  
+[Bandit Level 01 -> Level 02](#bandit-level-1)  |  [Bandit Level 18 -> Level 19](#bandit-level-18)  
+[Bandit Level 02 -> Level 03](#bandit-level-2)  |  [Bandit Level 19 -> Level 20](#bandit-level-19)  
+[Bandit Level 03 -> Level 04](#bandit-level-3)  |  [Bandit Level 20 -> Level 21](#bandit-level-20)  
+[Bandit Level 04 -> Level 05](#bandit-level-4)  
+[Bandit Level 05 -> Level 06](#bandit-level-5)  
+[Bandit Level 06 -> Level 07](#bandit-level-6)  
+[Bandit Level 07 -> Level 08](#bandit-level-7)  
+[Bandit Level 08 -> Level 09](#bandit-level-8)  
+[Bandit Level 09 -> Level 10](#bandit-level-9)  
+[Bandit Level 10 -> Level 11](#bandit-level-10)  
+[Bandit Level 11 -> Level 12](#bandit-level-11)  
+[Bandit Level 12 -> Level 13](#bandit-level-12)  
+[Bandit Level 13 -> Level 14](#bandit-level-13)  
+[Bandit Level 14 -> Level 15](#bandit-level-14)  
+[Bandit Level 15 -> Level 16](#bandit-level-15)  
+[Bandit Level 16 -> Level 17](#bandit-level-16)  
+
+
 
 
 
 ---
 
-## Bandit Level 0 -> Level 1  
+## Bandit Level 0
+**Description**  
+Bandit Level 0 -> Level 1
 ### Level Goal  
 The password for the next level is stored in a file called **readme** located in the home directory.  
 Use this password to log into bandit1 using SSH. Whenever you find a password for a level, use SSH (on port 2220) to log into that level and continue the game.  
@@ -44,7 +55,9 @@ bandit0@bandit:~$ cat readme
 ---
 
 
-## Bandit Level 1 -> Level 2
+## Bandit Level 1
+**Description**  
+Bandit Level 1 -> Level 2
 ### Level Goal  
 The password for the next level is stored in a file called **-** located in the home directory
 
@@ -70,7 +83,9 @@ bandit1@bandit:~$ cat ./-
 ---
 
 
-## Bandit Level 2 -> Level 3  
+## Bandit Level 2
+**Description**  
+Bandit Level 2 -> Level 3
 ### Level Goal 
 The password for the next level is stored in a file called **spaces in this filename** located in the home directory
 
@@ -105,7 +120,9 @@ bandit2@bandit:~$ cat spaces\ in\ this\ filename
 ---
 
 
-## Bandit Level 3 -> Level 4  
+## Bandit Level 3
+**Description**  
+Bandit Level 3 -> Level 4
 ### Level Goal  
 The password for the next level is stored in a hidden file in the **inhere** directory.
 
@@ -138,7 +155,9 @@ bandit3@bandit:~/inhere$ cat ./.hidden
 ---
 
 
-## Bandit Level 4 -> Level 5 
+## Bandit Level 4
+**Description**  
+Bandit Level 4 -> Level 5
 ### Level Goal   
 The password for the next level is stored in the only human-readable file in the **inhere** directory.
 
@@ -186,7 +205,9 @@ bandit4@bandit:~$ cat ./inhere/-file07
 ---
 
 
-## Bandit Level 5 -> Level 6  
+## Bandit Level 5
+**Description**  
+Bandit Level 5 -> Level 6
 ### Level Goal   
 The password for the next level is stored in a file somewhere under the **inhere** directory and has all of the following properties:
 
@@ -232,7 +253,9 @@ bandit5@bandit:~$ cat ./inhere/maybehere07/.file2
 ---
 
 
-## Bandit Level 6 -> Level 7  
+## Bandit Level 6
+**Description**  
+Bandit Level 6 -> Level 7
 ### Level Goal   
 The password for the next level is stored **somewhere on the server** and has all of the following properties:
 
@@ -265,7 +288,9 @@ bandit6@bandit:~$ find / -type f -user bandit7 -group bandit6 -size 33c 2>/dev/n
 ---
 
 
-## Bandit Level 7 -> Level 8
+## Bandit Level 7
+**Description**  
+Bandit Level 7 -> Level 8
 ### Level Goal   
 The password for the next level is stored in the file **data.txt** next to the word **millionth**.
 
@@ -287,7 +312,9 @@ bandit7@bandit:~$ grep millionth data.txt
 
 ---
 
-## Bandit Level 8 -> Level 9
+## Bandit Level 8
+**Description**  
+Bandit Level 8 -> Level 9
 ### Level Goal
 The password for the next level is stored in the file **data.txt** and is the only line of text that occurs only once
 
@@ -311,7 +338,9 @@ bandit8@bandit:~$ sort data.txt | uniq -u
 
 
 
-## Bandit Level 9 -> Level 10
+## Bandit Level 9
+**Description**  
+Bandit Level 9 -> Level 10
 ### Level Goal 
 The password for the next level is stored in the file **data.txt** in one of the few human-readable strings, preceded by several ‘=’ characters.
 
@@ -334,7 +363,9 @@ bandit9@bandit:~$ strings data.txt | grep ====
 ---
 
 
-## Bandit Level 10 -> Level 11
+## Bandit Level 10
+**Description**  
+Bandit Level 10 -> Level 11
 ### Level Goal
 The password for the next level is stored in the file **data.txt**, which contains base64 encoded data.
 
@@ -355,22 +386,77 @@ bandit10@bandit:~$ cat data.txt | base64 -d
 
 ---
 
-## Bandit 11
-**Level Goal**   
+
+## Bandit Level 11
+**Description**  
+Bandit Level 11 -> Level 12
+### Level Goal
 The password for the next level is stored in the file data.txt, where all lowercase (a-z) and uppercase (A-Z) letters have been rotated by 13 positions
 
-Rotated by 13 positions means a -> n, b -> o ... y -> l, z -> m  
+**Walkthrough**  
+Rotated by 13 positions means  
+a becomes n  
+b becomes o  
+.  
+.  
+m becomes z  
+n becomes a  
+.  
+.  
+y becomes l  
+z becomes m  
+ 
+Login to the server  
+
+```
+ssh bandit11@bandit.labs.overthewire.org -p 2220
+
+Use the password obtained from the previous level  
+```
+
+
 We *cat* the contents of the file and pipe it to *tr* (translate) command to change all letters by 13 positions.
+
+```
+bandit11@bandit:~$ ls
+data.txt 
+
+bandit11@bandit:~$ cat data.txt
+Gur cnffjbeq vf 5Gr8L4qetPEsPk8htqjhRK8XSP6x2RHh
+
+bandit11@bandit:~$ cat data.txt | tr a-zA-Z n-za-mN-ZA-M
+```
+
 
 ---
 
-## Bandit 12
-**Level Goal**   
+
+## Bandit Level 12
+**Description**  
+Bandit Level 12 -> Level 12
+### Level Goal
+The password for the next level is stored in the file **data.txt**,  
+which is a hexdump of a file that has been repeatedly compressed.  
+For this level it may be useful to create a directory under /tmp in which you can work using mkdir.  
+For example: mkdir /tmp/myname123.  
+Then copy the datafile using cp, and rename it using mv (read the manpages!)
+
+
+**Walkthrough**  
+Login to the server  
 
 ```
-bandit12@bandit:/tmp/micheal$ file data.txt
+ssh bandit12@bandit.labs.overthewire.org -p 2220
+
+Use the password obtained from the previous level  
+```
+
+
+```
+bandit12@bandit:/tmp/bandit_user$ file data.txt
 data.txt: ASCII text
-bandit12@bandit:/tmp/micheal$ cat data.txt
+
+bandit12@bandit:/tmp/bandit_user$ head -7 data.txt
 00000000: 1f8b 0808 0650 b45e 0203 6461 7461 322e  .....P.^..data2.
 00000010: 6269 6e00 013d 02c2 fd42 5a68 3931 4159  bin..=...BZh91AY
 00000020: 2653 598e 4f1c c800 001e 7fff fbf9 7fda  &SY.O...........
@@ -379,94 +465,146 @@ bandit12@bandit:/tmp/micheal$ cat data.txt
 00000050: 5481 a1a0 1ea0 1a34 d0d0 001a 68d3 4683  T......4....h.F.
 00000060: 4680 0680 0034 1918 4c4d 190c 4000 0001  F....4..LM..@...
 
-bandit12@bandit:/tmp/micheal$ xxd -r data.txt data.out
-bandit12@bandit:/tmp/micheal$ file *
-data.out: gzip compressed data, was "data2.bin", last modified: Thu May  7 18:14:30 2020, max compression, from Unix
-data.txt: ASCII text
-bandit12@bandit:/tmp/micheal$ gunzip data.out
-gzip: data.out: unknown suffix -- ignored
-bandit12@bandit:/tmp/micheal$ gunzip -S ".out" data.out
-bandit12@bandit:/tmp/micheal$ ls
-data  data.txt
-bandit12@bandit:/tmp/micheal$ file *
-data:     bzip2 compressed data, block size = 900k
-data.txt: ASCII text
-bandit12@bandit:/tmp/micheal$ bzip2 -d data
-bzip2: Can't guess original name for data -- using data.out
-bandit12@bandit:/tmp/micheal$ file *
-data.out: gzip compressed data, was "data4.bin", last modified: Thu May  7 18:14:30 2020, max compression, from Unix
-data.txt: ASCII text
-bandit12@bandit:/tmp/micheal$ gunzip -S ".out" data.out
-bandit12@bandit:/tmp/micheal$ ls
-data  data.txt
-
-bandit12@bandit:/tmp/micheal$ ls
-data  data.txt
-bandit12@bandit:/tmp/micheal$ file data
-data: POSIX tar archive (GNU)
-bandit12@bandit:/tmp/micheal$ tar xvf data
-data5.bin
-bandit12@bandit:/tmp/micheal$ file data5.bin
-data5.bin: POSIX tar archive (GNU)
-bandit12@bandit:/tmp/micheal$ tar xvf data5.bin
-data6.bin
-bandit12@bandit:/tmp/micheal$ file data6.bin
-data6.bin: bzip2 compressed data, block size = 900k
-bandit12@bandit:/tmp/micheal$ bzip2 -d data6.bin
-bzip2: Can't guess original name for data6.bin -- using data6.bin.out
-bandit12@bandit:/tmp/micheal$ file data6.bin.out
-data6.bin.out: POSIX tar archive (GNU)
-bandit12@bandit:/tmp/micheal$ tar xvf data.bin.out
-tar: data.bin.out: Cannot open: No such file or directory
-tar: Error is not recoverable: exiting now
-bandit12@bandit:/tmp/micheal$ tar xvf data6.bin.out
-data8.bin
-bandit12@bandit:/tmp/micheal$ file data8.bin
-data8.bin: gzip compressed data, was "data9.bin", last modified: Thu May  7 18:14:30 2020, max compression, from Unix
-bandit12@bandit:/tmp/micheal$ gunzip -S ".bin" data8.bin
-bandit12@bandit:/tmp/micheal$ ls
-data  data5.bin  data6.bin.out  data8  data.txt
-bandit12@bandit:/tmp/micheal$ file data
-data: POSIX tar archive (GNU)
-bandit12@bandit:/tmp/micheal$ file data8
-data8: ASCII text
-bandit12@bandit:/tmp/micheal$ cat data8
-
-xxd -r data.txt data.out
-gunzip -S ".out" data.out
-bzip2 -d data
-gunzip -S ".out" data.out
-tar xvf data
-tar xvf data5.bin
-bzip2 -d data6.bin
-tar xvf data6.bin.out
-gunzip -S ".bin" data8.bin
-cat data8
+bandit12@bandit:/tmp/bandit_user$ xxd -r data.txt data.out
 
 ```
+
+```
+bandit12@bandit:/tmp/bandit_user$ file data.out
+data.out: gzip compressed data, was "data2.bin", last modified: Thu May  7 18:14:30 2020, max compression, from Unix
+
+bandit12@bandit:/tmp/bandit_user$ mv data.out data1.gz
+bandit12@bandit:/tmp/bandit_user$ gunzip data1.gz
+
+```
+
+```
+bandit12@bandit:/tmp/bandit_user$ ls
+data1  data1.out data.txt
+
+bandit12@bandit:/tmp/bandit_user$ file data1
+data1:     bzip2 compressed data, block size = 900k
+
+bandit12@bandit:/tmp/bandit_user$ mv data data2.bz2
+bandit12@bandit:/tmp/bandit_user$ bzip2 -d data2.bz2
+
+```
+
+```
+bandit12@bandit:/tmp/bandit_user$ ls
+data2 data.txt
+bandit12@bandit:/tmp/bandit_user$ file data2
+data2.out: gzip compressed data, was "data4.bin", last modified: Thu May  7 18:14:30 2020, max compression, from Unix
+
+bandit12@bandit:/tmp/bandit_user$ mv data2 data3.gz
+bandit12@bandit:/tmp/bandit_user$ gunzip data3.gz
+```
+
+```
+bandit12@bandit:/tmp/bandit_user$ ls
+data3  data.txt
+
+bandit12@bandit:/tmp/bandit_user$ file data3
+data3: POSIX tar archive (GNU)
+
+bandit12@bandit:/tmp/bandit_user$ mv data3 data4.tar
+
+bandit12@bandit:/tmp/bandit_user$ tar xvf data4.tar
+data5.bin
+```
+
+```
+bandit12@bandit:/tmp/bandit_user$ file data5.bin
+data5.bin: POSIX tar archive (GNU)
+
+bandit12@bandit:/tmp/bandit_user$ mv data5.bin data5.tar
+
+bandit12@bandit:/tmp/bandit_user$ tar xvf data5.tar
+data6.bin
+
+```
+
+```
+bandit12@bandit:/tmp/bandit_user$ file data6.bin
+data6.bin: bzip2 compressed data, block size = 900k
+
+bandit12@bandit:/tmp/bandit_user$ mv data6.bin data6.bz2
+
+bandit12@bandit:/tmp/bandit_user$ bzip2 -d data6.bz2
+
+```
+
+```
+bandit12@bandit:/tmp/bandit_user$ ls
+data4.tar  data5.tar  data6  data.txt
+
+bandit12@bandit:/tmp/bandit_user$ file data6
+data6: POSIX tar archive (GNU) 
+
+bandit12@bandit:/tmp/bandit_user$ mv data6 data6.tar
+
+bandit12@bandit:/tmp/bandit_user$ tar xvf data6.tar
+data8.bin
+```
+
+```
+bandit12@bandit:/tmp/bandit_user$ ls
+data4.tar  data5.tar  data6.tar  data8.bin  data.txt
+
+bandit12@bandit:/tmp/bandit_user$ file data8.bin
+data8.bin: gzip compressed data, was "data9.bin", last modified: Thu May  7 18:14:30 2020, max compression, from Unix
+
+bandit12@bandit:/tmp/bandit_user$ mv data8.bin data8.gz
+bandit12@bandit:/tmp/bandit_user$ gunzip data8.gz
+
+bandit12@bandit:/tmp/bandit_user$ ls
+data4.tar  data5.tar  data6.tar  data8  data.txt
+
+bandit12@bandit:/tmp/bandit_user$ file data8
+data8: ASCII text 
+
+bandit12@bandit:/tmp/bandit_user$ cat data8 
+```
+
+
 ---
 
-## Bandit 13
-**Level Goal**   
 
+## Bandit Level 13
+**Description**  
+Bandit Level 13 -> Level 14
+**Level Goal**  
+The password for the next level is stored in **/etc/bandit_pass/bandit14 and can only be read by user bandit14**. For this level, you don’t get the next password, but you get a private SSH key that can be used to log into the next level. **Note: localhost** is a hostname that refers to the machine you are working on
+
+**Walkthrough**  
 ssh -i sshprivate bandit14@localhost
 
 ---
 
-## Bandit 14
+## Bandit Level 14
+**Description**  
+Bandit Level 14 -> Level 15
 
+**Walkthrough**  
 echo "4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e" | nc localhost 30000
 
 ---
 
-## Bandit 15
+## Bandit Level 15
+**Description**  
+Bandit Level 15 -> Level 16
 
+**Walkthrough**  
 bandit15@bandit:~$ openssl s_client -connect localhost:30001
 "enter password for current level"
 
 ---
 
-## Bandit 16
+## Bandit Level 16
+**Description**  
+Bandit Level 16 -> Level 17
+
+**Walkthrough**  
 nmap -sV -oA /tmp/mike/ -p 31000-32000 localhost
 grep open nmap.nmap
 
@@ -477,39 +615,37 @@ ssh -i key bandit17@localhost
 
 ---
 
-## Bandit 17
+## Bandit Level 17
+**Description**  
+Bandit Level 17 -> Level 18
+
+**Walkthrough**  
 diff password.new password.old
 
 ---
 
-## Bandit 18
+## Bandit Level 18
+**Description**  
+Bandit Level 18 -> Level 19
+
+**Walkthrough**  
 ssh bandit18@bandit.labs.overthewire.org -p 2220 "cat readme"
 
 ---
 
-## Bandit 19
+## Bandit Level 19
+**Description**  
+Bandit Level 19 -> Level 20
+
+**Walkthrough**  
 ./bandit20-do cat /etc/bandit_pass/bandit20
 
 ---
 
-## Bandit 20
+## Bandit Level 20
+**Description**  
+Bandit Level 20 -> Level 21
 
-bandit20@bandit:/tmp/blah$ grep open nmap.nmap
-22/tcp    open  ssh                 OpenSSH 7.4p1 (protocol 2.0)
-30000/tcp open  ndmps?
-
-
-nmap -sV -sC -oA nmap localhost
-- to find open ports
-- port 30000 is looking for a password
-
-'nc localhost 30000' gets a response
-strings on 'suconnect' shows that it is checking /home/bandit21/.prevpass 
-I assume it compares the contents of .prevpass with the input we provide but the programm does not complete
-
-
----
-## Bandit 21
 **Level Goal**   
 There is a setuid binary in the homedirectory that does the following:  
 it makes a connection to localhost on the port you specify as a commandline argument.  
@@ -518,6 +654,7 @@ If the password is correct, it will transmit the password for the next level (ba
 
 NOTE: Try connecting to your own network daemon to see if it works as you think
 
-'''setup python server to send password with connected  
+**Walkthrough**  
+setup python server to send password with connected  
 receive new password from suconnect  
-print to screen'''
+print to screen
