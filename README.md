@@ -616,27 +616,75 @@ bandit12@bandit:/tmp/bandit_user$ cat data8
 
 ## Bandit Level 13
 **Description**  
-Bandit Level 13 -> Level 14
+Bandit Level 13 -> Level 14  
 **Level Goal**  
 The password for the next level is stored in **/etc/bandit_pass/bandit14 and can only be read by user bandit14**. For this level, you don’t get the next password, but you get a private SSH key that can be used to log into the next level. **Note: localhost** is a hostname that refers to the machine you are working on
 
 **Walkthrough**  
-ssh -i sshprivate bandit14@localhost
+This time we do not need to search for a password, we need to use an SSH key to login to next level.  
+There is a file **sshkey.private** in the home directory.  
+We can read the man page for ssh to see how to use it.  
+The **-i** option for ssh will allow us to specify an identity (private ssh key) to use instead of a password.
+
+Here is the section of the **man ssh** page concerning **-i** option.
+```
+-i identity_file
+    Selects a file from which the identity (private key) for public key authentication is read.  
+    The default is ~/.ssh/identity for protocol version 1, 
+    and ~/.ssh/id_dsa, ~/.ssh/id_ecdsa, ~/.ssh/id_ed25519 and ~/.ssh/id_rsa for protocol version 2.  
+    Identity files may also be specified on a per-host basis in the configuration file.
+    It is possible to have multiple -i options (and multiple identities specified in
+    configuration files).  
+    If no certificates have been explicitly specified by the CertificateFile directive, 
+    ssh will also try to load certificate information from the filename obtained by appending
+    -cert.pub to identity filenames.
+```
+
+So now we can use ssh -i to login to the next level (bandit14) and the server will be localhost.  
+Once logged in we can obtain the password for bandit14 by reading the /etc/bandit_pass/bandit14 file.
+
+```
+bandit13@bandit:~$ ssh -i sshkey.private bandit14@localhost
+```
 
 ---
 
 ## Bandit Level 14
 **Description**  
 Bandit Level 14 -> Level 15
+### Level Goal
+
+The password for the next level can be retrieved by submitting the password of the current level to port 30000 on localhost.
 
 **Walkthrough**  
-echo "4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e" | nc localhost 30000
+We can get the password for the current level by reading the /etc/bandit_pass/bandit14 file. Now that we are user bandit14 we have permission to read the file.
+
+```shell
+bandit14@bandit:~$ cat /etc/bandit_pass/bandit14
+4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e
+
+```
+
+We can use **netcat** or **nc** command to open a connection to a server and port.  
+For this level the server will be localhost and the port 30000. 
+```shell
+bandit14@bandit:~$ echo "4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e" | nc localhost 30000
+```
+
+We receive a message letting us know if the password was correct or incorrect.  
+If the sent password was correct we get the password for the next level. 
+
 
 ---
 
 ## Bandit Level 15
 **Description**  
-Bandit Level 15 -> Level 16
+Bandit Level 15 -> Level 16  
+### Level Goal
+
+The password for the next level can be retrieved by submitting the password of the current level to port 30001 on localhost using SSL encryption.
+
+Helpful note: Getting “HEARTBEATING” and “Read R BLOCK”? Use -ign_eof and read the “CONNECTED COMMANDS” section in the manpage. Next to ‘R’ and ‘Q’, the ‘B’ command also works in this version of that command…
 
 **Walkthrough**  
 bandit15@bandit:~$ openssl s_client -connect localhost:30001
