@@ -433,7 +433,7 @@ bandit11@bandit:~$ cat data.txt | tr a-zA-Z n-za-mN-ZA-M
 
 ## Bandit Level 12
 **Description**  
-Bandit Level 12 -> Level 12
+Bandit Level 12 -> Level 13
 ### Level Goal
 The password for the next level is stored in the file **data.txt**,  
 which is a hexdump of a file that has been repeatedly compressed.  
@@ -451,12 +451,13 @@ ssh bandit12@bandit.labs.overthewire.org -p 2220
 Use the password obtained from the previous level  
 ```
 
+Running **cat data.txt** will show that the file is a hexdump.  
+Following the instructions in the level goal we create a directory in the **/tmp** directory. Then copy the data.txt into the newly created directory.
+
+
 
 ```
-bandit12@bandit:/tmp/bandit_user$ file data.txt
-data.txt: ASCII text
-
-bandit12@bandit:/tmp/bandit_user$ head -7 data.txt
+bandit12@bandit:cat data.txt
 00000000: 1f8b 0808 0650 b45e 0203 6461 7461 322e  .....P.^..data2.
 00000010: 6269 6e00 013d 02c2 fd42 5a68 3931 4159  bin..=...BZh91AY
 00000020: 2653 598e 4f1c c800 001e 7fff fbf9 7fda  &SY.O...........
@@ -465,9 +466,18 @@ bandit12@bandit:/tmp/bandit_user$ head -7 data.txt
 00000050: 5481 a1a0 1ea0 1a34 d0d0 001a 68d3 4683  T......4....h.F.
 00000060: 4680 0680 0034 1918 4c4d 190c 4000 0001  F....4..LM..@...
 
+bandit12@bandit: mkdir /tmp/bandit_user
+bandit12@bandit: cp data.txt /tmp/bandit_user/
+bandit12@bandit: cd /tmp/bandit_user
+```
+
+Now we can work on the file. First thing is to reverse the hexdump to obtain the original file.
+```
 bandit12@bandit:/tmp/bandit_user$ xxd -r data.txt data.out
 
 ```
+
+Now we run **file** on the new file to find out what type of file it is. This instance the file is a gzip compressed file.  Now we rename the file from **data.out** to **data1.gz** so we can uncompressed the file using **gunzip**.
 
 ```
 bandit12@bandit:/tmp/bandit_user$ file data.out
@@ -478,6 +488,10 @@ bandit12@bandit:/tmp/bandit_user$ gunzip data1.gz
 
 ```
 
+After uncompressing the **data1.gz** we get a new file **data1**. Again we run **file** to see what file type we are dealing with now. 
+It is a compressed file again this time a bzip2 file. 
+Again rename from and uncompress it.
+
 ```
 bandit12@bandit:/tmp/bandit_user$ ls
 data1  data1.out data.txt
@@ -485,10 +499,13 @@ data1  data1.out data.txt
 bandit12@bandit:/tmp/bandit_user$ file data1
 data1:     bzip2 compressed data, block size = 900k
 
-bandit12@bandit:/tmp/bandit_user$ mv data data2.bz2
+bandit12@bandit:/tmp/bandit_user$ mv data1 data2.bz2
 bandit12@bandit:/tmp/bandit_user$ bzip2 -d data2.bz2
 
 ```
+
+This time the file is gzip compressed file again.
+Rinse and repeat. Rename file and uncompress.
 
 ```
 bandit12@bandit:/tmp/bandit_user$ ls
@@ -499,6 +516,10 @@ data2.out: gzip compressed data, was "data4.bin", last modified: Thu May  7 18:1
 bandit12@bandit:/tmp/bandit_user$ mv data2 data3.gz
 bandit12@bandit:/tmp/bandit_user$ gunzip data3.gz
 ```
+
+Now the file is a POSIX tar archive.  
+Rename to .tar and uncompress.
+
 
 ```
 bandit12@bandit:/tmp/bandit_user$ ls
@@ -513,6 +534,10 @@ bandit12@bandit:/tmp/bandit_user$ tar xvf data4.tar
 data5.bin
 ```
 
+File command tells us that data5.bin is another tar archive.
+Rename from data5.bin to data5.tar.
+Uncompress data5.tar.
+
 ```
 bandit12@bandit:/tmp/bandit_user$ file data5.bin
 data5.bin: POSIX tar archive (GNU)
@@ -524,6 +549,10 @@ data6.bin
 
 ```
 
+File command tells us that data6.bin is another bzip2 compressed file.  
+Rename from data6.bin to data6.bz2.
+Uncompress data6.bz2.
+
 ```
 bandit12@bandit:/tmp/bandit_user$ file data6.bin
 data6.bin: bzip2 compressed data, block size = 900k
@@ -533,6 +562,11 @@ bandit12@bandit:/tmp/bandit_user$ mv data6.bin data6.bz2
 bandit12@bandit:/tmp/bandit_user$ bzip2 -d data6.bz2
 
 ```
+
+File command tells us that data6 is another tar archive.  
+Rename from data6 to data6.tar.
+Uncompress data6.tar.
+
 
 ```
 bandit12@bandit:/tmp/bandit_user$ ls
@@ -547,6 +581,11 @@ bandit12@bandit:/tmp/bandit_user$ tar xvf data6.tar
 data8.bin
 ```
 
+File command tells us that data8.bin is another gzip compressed file.  
+Rename from data8.bin to data8.gz.
+Uncompress data8.gz.
+
+
 ```
 bandit12@bandit:/tmp/bandit_user$ ls
 data4.tar  data5.tar  data6.tar  data8.bin  data.txt
@@ -556,7 +595,12 @@ data8.bin: gzip compressed data, was "data9.bin", last modified: Thu May  7 18:1
 
 bandit12@bandit:/tmp/bandit_user$ mv data8.bin data8.gz
 bandit12@bandit:/tmp/bandit_user$ gunzip data8.gz
+```
+After all that decompressing we finally have a text file.
+File command tells us that data8 is a ASCII text file.  
+Cat data8 in order to read the password.
 
+```
 bandit12@bandit:/tmp/bandit_user$ ls
 data4.tar  data5.tar  data6.tar  data8  data.txt
 
