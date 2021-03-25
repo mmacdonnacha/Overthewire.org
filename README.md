@@ -38,7 +38,7 @@ Use this password to log into bandit1 using SSH. Whenever you find a password fo
 **Walkthrough**  
 Login to the server  
 
-```
+```shell
 ssh bandit0@bandit.labs.overthewire.org -p 2220
 
 Use the password: bandit0  
@@ -64,14 +64,14 @@ The password for the next level is stored in a file called **-** located in the 
 **Walkthrough**   
 Login to the server  
 
-```
+```shell
 ssh bandit1@bandit.labs.overthewire.org -p 2220
 
 Use the password obtained from the previous level  
 ```
 
 Running *ls* command we can see a single file with the name *-*.  
-Running '*cat -*' does not print the contents of the file *-*.  
+Running '*cat -*' does not print the contents of the file *-* as the cat command thinks you are setting an option like **-n** for line numbers.  
 We need to give the path to the file for the cat command to print the contents.
 ```shell 
 bandit1@bandit:~$ ls 
@@ -92,7 +92,7 @@ The password for the next level is stored in a file called **spaces in this file
 **Walkthrough**  
 Login to the server  
 
-```
+```shell
 ssh bandit2@bandit.labs.overthewire.org -p 2220
 
 Use the password obtained from the previous level  
@@ -129,19 +129,21 @@ The password for the next level is stored in a hidden file in the **inhere** dir
 **Walkthrough**  
 Login to the server  
 
-```
+```shell
 ssh bandit3@bandit.labs.overthewire.org -p 2220
 
 Use the password obtained from the previous level  
 ```
 
 Change directory into *inhere*, running *ls* command will show no files.  
+```shell
+bandit3@bandit:~/inhere$ ls  
+```
 Running *ls -al* will let us see all files including hidden files.  
 We can then see a file named *.hidden*.  
 The you can print to screen using *cat* command.
 
 ```shell
-bandit3@bandit:~/inhere$ ls  
 bandit3@bandit:~/inhere$ ls -al  
 total 12  
 drwxr-xr-x 2 root    root    4096 May  7  2020 . 
@@ -164,13 +166,13 @@ The password for the next level is stored in the only human-readable file in the
 **Walkthrough**  
 Login to the server  
 
-```
+```shell
 ssh bandit4@bandit.labs.overthewire.org -p 2220
 
 Use the password obtained from the previous level  
 ```
 
-We run *ls inhere* to see what files are in the *inhere* directory.  
+We run **ls inhere** to see what files are in the *inhere* directory.  
 
 ```shell
 bandit4@bandit:~$ ls inhere/
@@ -178,9 +180,9 @@ bandit4@bandit:~$ ls inhere/
 ```
 
 There are 10 files which have names that are not descriptive.  
-Here we use the *file* command to get information on each file in the *inhere* directory.  
+Now we use the **file** command to get information on each file in the *inhere* directory.  
 
-```
+```shell
 bandit4@bandit:~$ file inhere/*  
 inhere/-file00: data 
 inhere/-file01: data  
@@ -218,7 +220,7 @@ The password for the next level is stored in a file somewhere under the **inhere
 **Walkthrough**  
 Login to the server  
 
-```
+```shell
 ssh bandit5@bandit.labs.overthewire.org -p 2220
 
 Use the password obtained from the previous level  
@@ -227,7 +229,7 @@ Use the password obtained from the previous level
 Running *ls* on the inhere directory will give us 20 more directories.  
 Each of those directories contains multiple files.  
 
-```
+```shell
 bandit5@bandit:~$ ls inhere/
 maybehere00  maybehere03  maybehere06  maybehere09  maybehere12  maybehere15  maybehere18
 maybehere01  maybehere04  maybehere07  maybehere10  maybehere13  maybehere16  maybehere19
@@ -238,7 +240,7 @@ bandit5@bandit:~$ ls inhere/maybehere00
 ```
 
 We could run *cat* on each file but that would take a long time to complete.  
-Instead we use the *find* command to find all file (*-type f*) of size 1033 bytes (*-size 1033c*) not executable (*-not -executable*) to get a list all files with those properties.  
+Instead we use the *find* command to find all file (**-type f**) of size 1033 bytes (**-size 1033c**) not executable (**-not -executable**) to get a list all files with those properties.  
 There is only 1 file with all 3 properties.  
 As before *cat* the file to print its content to screen.
 
@@ -266,7 +268,7 @@ The password for the next level is stored **somewhere on the server** and has al
 **Walkthrough**  
 Login to the server  
 
-```
+```shell
 ssh bandit6@bandit.labs.overthewire.org -p 2220
 
 Use the password obtained from the previous level  
@@ -278,10 +280,9 @@ that are owned by bandit7 **-user bandit7**
 and are part of the group bandit6 **-group bandit6**  
 with a size of 33 bytes **-size 33c**.  
 
-The **2>/dev/null** part of the command will not print errors such as permission denied to the screen.
 
 ```shell
-bandit6@bandit:~$ find / -type f -user bandit7 -group bandit6 -size 33c 2>/dev/null
+bandit6@bandit:~$ find / -type f -user bandit7 -group bandit6 -size 33c
 ```
 
 
@@ -297,7 +298,7 @@ The password for the next level is stored in the file **data.txt** next to the w
 **Walkthrough**  
 Login to the server  
 
-```
+```shell
 ssh bandit7@bandit.labs.overthewire.org -p 2220
 
 Use the password obtained from the previous level  
@@ -321,7 +322,7 @@ The password for the next level is stored in the file **data.txt** and is the on
 **Walkthrough**  
 Login to the server  
 
-```
+```shell
 ssh bandit8@bandit.labs.overthewire.org -p 2220
 
 Use the password obtained from the previous level  
@@ -347,7 +348,7 @@ The password for the next level is stored in the file **data.txt** in one of the
 **Walktrough**  
 Login to the server  
 
-```
+```shell
 ssh bandit9@bandit.labs.overthewire.org -p 2220
 
 Use the password obtained from the previous level  
@@ -372,13 +373,13 @@ The password for the next level is stored in the file **data.txt**, which contai
 **Walkthrough**  
 Login to the server  
 
-```
+```shell
 ssh bandit10@bandit.labs.overthewire.org -p 2220
 
 Use the password obtained from the previous level  
 ```
 
-Use *cat* to print the information in data.txt and then decode it using *base64 -d*
+Use **cat** to print the information in data.txt and then decode it using **base64 -d**
 
 ```shell
 bandit10@bandit:~$ cat data.txt | base64 -d
@@ -408,16 +409,16 @@ z becomes m
  
 Login to the server  
 
-```
+```shell
 ssh bandit11@bandit.labs.overthewire.org -p 2220
 
 Use the password obtained from the previous level  
 ```
 
 
-We *cat* the contents of the file and pipe it to *tr* (translate) command to change all letters by 13 positions.
+We **cat** the contents of the file and pipe it to **tr** (translate) command to change all letters by 13 positions.
 
-```
+```shell
 bandit11@bandit:~$ ls
 data.txt 
 
@@ -445,7 +446,7 @@ Then copy the datafile using cp, and rename it using mv (read the manpages!)
 **Walkthrough**  
 Login to the server  
 
-```
+```shell
 ssh bandit12@bandit.labs.overthewire.org -p 2220
 
 Use the password obtained from the previous level  
@@ -456,7 +457,7 @@ Following the instructions in the level goal we create a directory in the **/tmp
 
 
 
-```
+```shell
 bandit12@bandit:cat data.txt
 00000000: 1f8b 0808 0650 b45e 0203 6461 7461 322e  .....P.^..data2.
 00000010: 6269 6e00 013d 02c2 fd42 5a68 3931 4159  bin..=...BZh91AY
@@ -472,14 +473,13 @@ bandit12@bandit: cd /tmp/bandit_user
 ```
 
 Now we can work on the file. First thing is to reverse the hexdump to obtain the original file.
-```
+```shell
 bandit12@bandit:/tmp/bandit_user$ xxd -r data.txt data.out
-
 ```
 
 Now we run **file** on the new file to find out what type of file it is. This instance the file is a gzip compressed file.  Now we rename the file from **data.out** to **data1.gz** so we can uncompressed the file using **gunzip**.
 
-```
+```shell
 bandit12@bandit:/tmp/bandit_user$ file data.out
 data.out: gzip compressed data, was "data2.bin", last modified: Thu May  7 18:14:30 2020, max compression, from Unix
 
@@ -492,7 +492,7 @@ After uncompressing the **data1.gz** we get a new file **data1**. Again we run *
 It is a compressed file again this time a bzip2 file. 
 Again rename from and uncompress it.
 
-```
+```shell
 bandit12@bandit:/tmp/bandit_user$ ls
 data1  data1.out data.txt
 
@@ -507,7 +507,7 @@ bandit12@bandit:/tmp/bandit_user$ bzip2 -d data2.bz2
 This time the file is gzip compressed file again.
 Rinse and repeat. Rename file and uncompress.
 
-```
+```shell
 bandit12@bandit:/tmp/bandit_user$ ls
 data2 data.txt
 bandit12@bandit:/tmp/bandit_user$ file data2
@@ -521,7 +521,7 @@ Now the file is a POSIX tar archive.
 Rename to .tar and uncompress.
 
 
-```
+```shell
 bandit12@bandit:/tmp/bandit_user$ ls
 data3  data.txt
 
@@ -538,7 +538,7 @@ File command tells us that data5.bin is another tar archive.
 Rename from data5.bin to data5.tar.
 Uncompress data5.tar.
 
-```
+```shell
 bandit12@bandit:/tmp/bandit_user$ file data5.bin
 data5.bin: POSIX tar archive (GNU)
 
@@ -553,7 +553,7 @@ File command tells us that data6.bin is another bzip2 compressed file.
 Rename from data6.bin to data6.bz2.
 Uncompress data6.bz2.
 
-```
+```shell
 bandit12@bandit:/tmp/bandit_user$ file data6.bin
 data6.bin: bzip2 compressed data, block size = 900k
 
@@ -568,7 +568,7 @@ Rename from data6 to data6.tar.
 Uncompress data6.tar.
 
 
-```
+```shell
 bandit12@bandit:/tmp/bandit_user$ ls
 data4.tar  data5.tar  data6  data.txt
 
@@ -586,7 +586,7 @@ Rename from data8.bin to data8.gz.
 Uncompress data8.gz.
 
 
-```
+```shell
 bandit12@bandit:/tmp/bandit_user$ ls
 data4.tar  data5.tar  data6.tar  data8.bin  data.txt
 
@@ -600,7 +600,7 @@ After all that decompressing we finally have a text file.
 File command tells us that data8 is a ASCII text file.  
 Cat data8 in order to read the password.
 
-```
+```shell
 bandit12@bandit:/tmp/bandit_user$ ls
 data4.tar  data5.tar  data6.tar  data8  data.txt
 
@@ -643,7 +643,7 @@ Here is the section of the **man ssh** page concerning **-i** option.
 So now we can use ssh -i to login to the next level (bandit14) and the server will be localhost.  
 Once logged in we can obtain the password for bandit14 by reading the /etc/bandit_pass/bandit14 file.
 
-```
+```shell
 bandit13@bandit:~$ ssh -i sshkey.private bandit14@localhost
 ```
 
@@ -657,18 +657,19 @@ Bandit Level 14 -> Level 15
 The password for the next level can be retrieved by submitting the password of the current level to port 30000 on localhost.
 
 **Walkthrough**  
+Following the previous level we used an ssh private key to log into level 14 so first we need to obtain the password for level 14.  
 We can get the password for the current level by reading the /etc/bandit_pass/bandit14 file. Now that we are user bandit14 we have permission to read the file.
 
 ```shell
 bandit14@bandit:~$ cat /etc/bandit_pass/bandit14
-4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e
-
+<BANDIT14_PASSWORD>
 ```
 
 We can use **netcat** or **nc** command to open a connection to a server and port.  
 For this level the server will be localhost and the port 30000. 
+
 ```shell
-bandit14@bandit:~$ echo "4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e" | nc localhost 30000
+bandit14@bandit:~$ echo "<BANDIT14_PASSWORD>" | nc localhost 30000
 ```
 
 We receive a message letting us know if the password was correct or incorrect.  
@@ -686,8 +687,10 @@ The password for the next level can be retrieved by submitting the password of t
 
 Helpful note: Getting “HEARTBEATING” and “Read R BLOCK”? Use -ign_eof and read the “CONNECTED COMMANDS” section in the manpage. Next to ‘R’ and ‘Q’, the ‘B’ command also works in this version of that command…
 
-**Walkthrough**  
+**Walkthrough**   
+```shell
 bandit15@bandit:~$ openssl s_client -connect localhost:30001
+```
 "enter password for current level"
 
 ---
