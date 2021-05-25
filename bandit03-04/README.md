@@ -17,20 +17,20 @@ ssh bandit3@bandit.labs.overthewire.org -p 2220
 Change directory into `inhere`, running `ls` command will show no files.  
 
 ```bash
+bandit3@bandit:~$ ls
+inhere
+bandit3@bandit:~$ cd inhere/
 bandit3@bandit:~/inhere$ ls  
 
 ```
 
-Running `ls -al` will let us see all files including hidden files.  
+Running `ls -a` will let us see all files including hidden files.  
+`-a` for all files (do not ignore entries starting with .)  
 We can then see a file named `.hidden`.  
 The you can print to screen using `cat` command.
 
 ```bash
-bandit3@bandit:~/inhere$ ls -al  
-total 12  
-drwxr-xr-x 2 root    root    4096 May  7  2020 . 
-drwxr-xr-x 3 root    root    4096 May  7  2020 ..  
--rw-r----- 1 bandit4 bandit3   33 May  7  2020 .hidden  
-
+bandit3@bandit:~/inhere$ ls -a
+.  ..  .hidden
 bandit3@bandit:~/inhere$ cat ./.hidden
 ```
