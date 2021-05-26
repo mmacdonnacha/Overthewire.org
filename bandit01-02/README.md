@@ -25,4 +25,5 @@ We need to give the path to the file for the cat command to print the contents.
 
 ```bash
 bandit1@bandit:~$ cat ./-  
+CV1Dtq##########################
 ```

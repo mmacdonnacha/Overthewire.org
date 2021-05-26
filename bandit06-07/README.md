@@ -31,4 +31,7 @@ Files with a size of 33 bytes `-size 33c`.
 
 ```bash
 bandit6@bandit:~$ find / -type f -user bandit7 -group bandit6 -size 33c
+/var/lib/dpkg/info/bandit7.password
+bandit6@bandit:~$ cat /var/lib/dpkg/info/bandit7.password
+HKBPTKQ##########################
 ```

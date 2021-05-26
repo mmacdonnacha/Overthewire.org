@@ -33,4 +33,5 @@ The you can print to screen using `cat` command.
 bandit3@bandit:~/inhere$ ls -a
 .  ..  .hidden
 bandit3@bandit:~/inhere$ cat ./.hidden
+pIwrPr##########################
 ```

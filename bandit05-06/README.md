@@ -33,8 +33,11 @@ bandit5@bandit:~$ ls inhere/maybehere00
 
 We could run `cat` on each file but that would take a long time to complete.  
 Instead we use the `find` command.  
-The `find` command can be used to search for files in a directory hierarchy.  
-Using `find` with specific options we can narrow the search to find all files (`-type f`) of size 1033 bytes (`-size 1033c`) not executable (`-not -executable`).  
+The `find` command can be used to search for files or directories in a directory hierarchy.  
+Using `find` with specific options we can narrow the search to 
+ * find all files (`-type f`) 
+ * of size 1033 bytes (`-size 1033c`) 
+ * not executable (`-not -executable`).  
 
 ```bash
 bandit5@bandit:~$ find ./inhere/ -type f -size 1033c -not -executable
@@ -46,4 +49,5 @@ As before `cat` the file to print its content to screen.
 
 ```bash
 bandit5@bandit:~$ cat ./inhere/maybehere07/.file2
+DXjZPU##########################
 ```

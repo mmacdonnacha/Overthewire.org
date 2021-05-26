@@ -47,4 +47,5 @@ Use `cat` command to print the contents of the file which is the password for th
 
 ```bash
 bandit4@bandit:~$ cat ./inhere/-file07
+koReBO##########################
 ```

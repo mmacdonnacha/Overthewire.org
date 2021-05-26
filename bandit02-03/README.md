@@ -33,5 +33,7 @@ One using `\` before each space to indicate to the terminal that the filename co
 
 ```bash
 bandit2@bandit:~$ cat 'spaces in this filename'
+UmHadQ##########################
 bandit2@bandit:~$ cat spaces\ in\ this\ filename
+UmHadQ##########################
 ```
