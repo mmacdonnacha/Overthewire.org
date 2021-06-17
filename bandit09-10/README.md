@@ -5,7 +5,7 @@ The password for the next level is stored in the file `data.txt` in one of the f
 
 ---
 
-## Walktrough
+## Walkthrough
 
 Login to the server using the password obtained from the previous level [Bandit level 8 -> 9](../bandit08-09/README.md). 
 

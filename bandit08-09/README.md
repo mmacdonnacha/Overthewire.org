@@ -122,5 +122,5 @@ Combining the `sort` and `uniq -u` we can get the single line of text in `data.t
 
 ```bash
 bandit8@bandit:~$ sort data.txt | uniq -u
-##<PASSWORD FOR lEVEL 9>##
+UsvVyF##########################
 ```
