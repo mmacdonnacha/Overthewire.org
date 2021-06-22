@@ -20,7 +20,7 @@ t becomes g
 t is the 20th letter of the alphabet.  
 Rotate 13 places 20 + 13 = 33.  
 Since 33 is greater then 26 (26 letters in alphabet) we take 26 from 33 to bring it back into the alphabet range.  
-33 - 26 = 7
+33 - 26 = 7  
 7th letter of the alphabet is g.
 
 ### Full ROT13 mappings
@@ -74,6 +74,6 @@ Gur cnffjbeq vf 5Gr8L4qetPEsPk8htqjhRK8XSP6x2RHh
 bandit11@bandit:~$ cat data.txt | tr a-zA-Z n-za-mN-ZA-M
 The password is 5Te8Y4##########################
 ```
-Or we can one of many online tools like [CyberChef](https://gchq.github.io/CyberChef/) to rotate the characters back to the  orginal message.
+Or we can one of many online tools like [CyberChef](https://gchq.github.io/CyberChef/) that have graphical interfaces to solve the ROT13 ciphertext.
 
 ![](images/CyberChef%20-%20ROT13.png)
