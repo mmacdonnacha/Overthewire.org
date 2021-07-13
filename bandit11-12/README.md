@@ -7,21 +7,40 @@ The password for the next level is stored in the file data.txt, where all lowerc
 
 ## Walkthrough
 
-The description mentions characters being `rotated`, this immediately bring [ROT13](https://en.wikipedia.org/wiki/ROT13) and [Caesar Cipher](https://en.wikipedia.org/wiki/Caesar_cipher) to mind.  
-In a ROT13 cipher characters are rotated 13 places this means  
+Login to the server using the password obtained from the previous level [Bandit level 10 -> 11](../bandit10-11/README.md). 
 
-a becomes n  
+username: `bandit11` 
 
-a is 1st letter of the alphabet.  
+```
+ssh bandit11@bandit.labs.overthewire.org -p 2220
+```
+
+The file `data.txt` is located in the home directory.  
+```
+bandit11@bandit:~$ ls
+data.txt 
+```
+
+We `cat` the contents of the file and can see that it does not make any sense when we try to read. 
+```
+bandit11@bandit:~$ cat data.txt
+Gur cnffjbeq vf 5Gr8L4qetPEsPk8htqjhRK8XSP6x2RHh
+```
+
+Going back to the description it mentions characters being `rotated`, this immediately bring [ROT13](https://en.wikipedia.org/wiki/ROT13) to mind.  
+In a [ROT13](https://en.wikipedia.org/wiki/ROT13) cipher characters are rotated 13 places this means  
+
+`a` becomes `n`  
+`a` is 1st letter of the alphabet.  
 Rotate 13 places  1 + 13 = 14.  
-14th letter of alphabet is n
+14th letter of alphabet is `n`.
 
-t becomes g
-t is the 20th letter of the alphabet.  
+`t` becomes `g`  
+`t` is the 20th letter of the alphabet.  
 Rotate 13 places 20 + 13 = 33.  
 Since 33 is greater then 26 (26 letters in alphabet) we take 26 from 33 to bring it back into the alphabet range.  
 33 - 26 = 7  
-7th letter of the alphabet is g.
+7th letter of the alphabet is `g`.
 
 ### Full ROT13 mappings
 
@@ -45,27 +64,7 @@ Since 33 is greater then 26 (26 letters in alphabet) we take 26 from 33 to bring
 
 Now with an understanding of ROT13 we can move onto the level. 
 
-Login to the server using the password obtained from the previous level [Bandit level 10 -> 11](../bandit10-11/README.md). 
-
-username: `bandit11` 
-
-```
-ssh bandit11@bandit.labs.overthewire.org -p 2220
-```
-
-The file `data.txt` is located in the home directory.  
-```
-bandit11@bandit:~$ ls
-data.txt 
-```
-
-We `cat` the contents of the file and can see that it it does not make any sense when we try to read. 
-```
-bandit11@bandit:~$ cat data.txt
-Gur cnffjbeq vf 5Gr8L4qetPEsPk8htqjhRK8XSP6x2RHh
-```
-
-We cna use a linux command line tool `tr` (translate) to translate the rotated characters back to their original posistion.
+We can use a linux command line tool `tr` (translate) to translate the rotated characters back to their original posistion.
 
 ```
 bandit11@bandit:~$ cat data.txt
