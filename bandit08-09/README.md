@@ -57,7 +57,7 @@ bandit8@bandit:~$ wc -l data.txt
 ```
 
 1001 lines is too much to check manually.  
-Before we can elimiate the duplicated lines we need to group them together.  
+Before we can eliminate the duplicated lines we need to group them together.  
 `sort` command can sort the contents of a file and print to screen.
 
 ```
@@ -83,7 +83,7 @@ bandit8@bandit:~$ sort data.txt
 ```
 
 Now we have grouped all duplicated lines we can elimiate the doubles.  
-`uniq` command will let us elimated duplicated lines so we only see single occurences of each line.  
+`uniq` command will let us eliminated duplicated lines so we only see single occurences of each line.  
 We `sort` the data and pipe that to `uniq` to remove all the doubles.
 
 ```
