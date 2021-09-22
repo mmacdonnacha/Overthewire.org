@@ -10,7 +10,7 @@ The password for the next level can be retrieved by submitting the password of t
 
 So our challenge for this level is to send the password to port 30,000 on this machine.
 
-Since we used an ssh private key to log into this level 14 the first thing we need to do is get the password.  
+Since we used an ssh private key to log into this level the first thing we need to do is get the password.  
 All passwords for the bandit series of challenges are located in `/etc/bandit_pass/`.  
 The password for bandit14 is in a file names bandit14
 We can get the password for the current level by reading the /etc/bandit_pass/bandit14 file.  
