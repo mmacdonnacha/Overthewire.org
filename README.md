@@ -20,11 +20,11 @@ Walkthrough of how to solved Overthewire Bandit.
 [Bandit Level 11 -> Level 12](bandit11-12/README.md)  
 [Bandit Level 12 -> Level 13](bandit12-13/README.md)  
 [Bandit Level 13 -> Level 14](bandit13-14/README.md)  
+[Bandit Level 14 -> Level 15](bandit14-15/README.md)  
+[Bandit Level 15 -> Level 16](bandit15-16/README.md)  
+[Bandit Level 16 -> Level 17](bandit16-17/README.md)  
+[Bandit Level 17 -> Level 18](bandit17-18/README.md)  
 
-Bandit Level 14 -> Level 15  
-Bandit Level 15 -> Level 16  
-Bandit Level 16 -> Level 17  
-Bandit Level 17 -> Level 18  
 Bandit Level 18 -> Level 19  
 Bandit Level 19 -> Level 20  
 Bandit Level 20 -> Level 21  
