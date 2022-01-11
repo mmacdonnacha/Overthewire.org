@@ -1,10 +1,15 @@
-# Overthewire.org - Bandit
+<!-- omit in toc -->
+# Overthewire.org
 
-## [OverTheWire - Bandit](https://overthewire.org/wargames/bandit/)
+<!-- omit in toc -->
+## [OverTheWire](https://overthewire.org/)
 
-Walkthrough of how to solved Overthewire Bandit.
 
-### Table of Contents  
+- [Bandit](#bandit)
+
+---
+
+## Bandit
 
 [Bandit Level 00 -> Level 01](bandit00-01/README.md)  
 [Bandit Level 01 -> Level 02](bandit01-02/README.md)  
@@ -33,9 +38,9 @@ Walkthrough of how to solved Overthewire Bandit.
 [Bandit Level 24 -> Level 25](bandit24-25/README.md)  
 [Bandit Level 25 -> Level 26](bandit25-26/README.md)  
 [Bandit Level 26 -> Level 27](bandit26-27/README.md)  
+[Bandit Level 27 -> Level 28](bandit27-28/README.md)  
+[Bandit Level 28 -> Level 29](bandit28-29/README.md)  
 
-Bandit Level 27 -> Level 28  
-Bandit Level 28 -> Level 29  
 Bandit Level 29 -> Level 30  
 Bandit Level 30 -> Level 31  
 Bandit Level 31 -> Level 32  
