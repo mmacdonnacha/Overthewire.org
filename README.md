@@ -40,9 +40,9 @@
 [Bandit Level 26 -> Level 27](bandit26-27/README.md)  
 [Bandit Level 27 -> Level 28](bandit27-28/README.md)  
 [Bandit Level 28 -> Level 29](bandit28-29/README.md)  
+[Bandit Level 29 -> Level 30](bandit29-30/README.md)      
+[Bandit Level 30 -> Level 31](bandit30-31/README.md)
 
-Bandit Level 29 -> Level 30  
-Bandit Level 30 -> Level 31  
 Bandit Level 31 -> Level 32  
 Bandit Level 32 -> Level 33  
 Bandit Level 33 -> Level 34  
