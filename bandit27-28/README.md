@@ -62,7 +62,7 @@ bandit27@bandit:/tmp/bandit27/repo$
 
 
 ```console
-bandit27@bandit:/tmp/bandit2727/repo$ ls
+bandit27@bandit:/tmp/bandit27/repo$ ls
 README
 
 bandit27@bandit:/tmp/bandit27/repo$ cat README 
