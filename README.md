@@ -49,4 +49,5 @@
 
 ## Leviathan
 
-[Leviathan Level 00 -> Level 01](leviathan/leviathan00-01/README.md)  
+[Leviathan Level 0](leviathan/leviathan0/README.md)  
+[Leviathan Level 1](leviathan/leviathan1/README.md)  
