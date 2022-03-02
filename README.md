@@ -51,3 +51,9 @@
 
 [Leviathan Level 0](leviathan/leviathan0/README.md)  
 [Leviathan Level 1](leviathan/leviathan1/README.md)  
+[Leviathan Level 2](leviathan/leviathan2/README.md)  
+[Leviathan Level 3](leviathan/leviathan3/README.md)  
+[Leviathan Level 4](leviathan/leviathan4/README.md)  
+[Leviathan Level 5](leviathan/leviathan5/README.md)  
+[Leviathan Level 6](leviathan/leviathan6/README.md)  
+[Leviathan Level 7](leviathan/leviathan7/README.md)  
