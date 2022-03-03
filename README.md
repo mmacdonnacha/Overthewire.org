@@ -7,6 +7,7 @@
 
 - [Bandit](#bandit)
 - [Leviathan](#leviathan)
+- [Natas](#natas)
 
 ---
 
@@ -57,3 +58,8 @@
 [Leviathan Level 5](leviathan/leviathan5/README.md)  
 [Leviathan Level 6](leviathan/leviathan6/README.md)  
 [Leviathan Level 7](leviathan/leviathan7/README.md)  
+
+## Natas
+
+[Natas Level 0](natas/natas00/README.md)  
+[Natas Level 0 -> 1](natas/natas01/README.md)  
