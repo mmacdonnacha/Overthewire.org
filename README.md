@@ -62,4 +62,6 @@
 ## Natas
 
 [Natas Level 0](natas/natas00/README.md)  
-[Natas Level 0 -> 1](natas/natas01/README.md)  
+[Natas Level 0 -> 1](natas/natas01/README.md) 
+[Natas Level 1 -> 2](natas/natas02/README.md) 
+[Natas Level 2 -> 3](natas/natas03/README.md)  
