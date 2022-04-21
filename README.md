@@ -67,3 +67,4 @@
 [Natas Level 2 -> 3](natas/natas03/README.md)  
 [Natas Level 3 -> 4](natas/natas04/README.md)  
 [Natas Level 4 -> 5](natas/natas05/README.md)  
+[Natas Level 5 -> 6](natas/natas06/README.md)  
