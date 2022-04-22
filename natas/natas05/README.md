@@ -16,7 +16,7 @@ Use the username `natas5` and the password obtained from the previous challenge.
 
 Once logged in we get an `Access disallowed` message.
 
-![Natas 5 home page](img/../natas5_home.png)
+![Natas 5 home page](img/natas5_home.png)
 
 Checking the source code does not give any new information.
 
