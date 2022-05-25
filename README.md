@@ -70,6 +70,7 @@
 [Natas Level 4 -> 5](natas/natas05/README.md)  
 [Natas Level 5 -> 6](natas/natas06/README.md)  
 [Natas Level 6 -> 7](natas/natas07/README.md)  
+[Natas Level 7 -> 8](natas/natas08/README.md)  
 
 ## Krypton
 [Krypton level 0 -> Level 1](krypton/krypton0/README.md)  
